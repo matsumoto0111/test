@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>「阪神エリア」のほいコレ就職・転職フェアin三ノ宮 出展園専用ページ</title>
+    <style>
+        :root {
+            --primary-color: #00838f;
+            --primary-light: #e0f7fa;
+            --secondary-color: #ff9800;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px 10px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* ヘッダー */
+        header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--primary-color);
+            margin-bottom: 25px;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            line-height: 1.4;
+        }
+
+        /* 概要カード */
+        .event-info {
+            background-color: var(--primary-light);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .info-row {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px 0;
+            border-bottom: 1px dashed #b2ebf2;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            font-weight: bold;
+            width: 110px;
+            color: var(--primary-color);
+        }
+
+        .info-value {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .info-value .note {
+            font-size: 0.85rem;
+            color: #d32f2f;
+            display: block;
+            margin-top: 2px;
+        }
+
+        .map-link {
+            display: inline-block;
+            margin-left: 10px;
+            background: #4285f4;
+            color: #fff;
+            padding: 2px 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        /* セクション全般 */
+        section {
+            margin-bottom: 35px;
+        }
+
+        section h2 {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        /* グリッドレイアウト */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            background: #fafafa;
+            text-align: center;
+        }
+
+        .card h3, .card h2.card-title {
+            font-size: 1.1rem;
+            color: #006064;
+            margin-bottom: 5px;
+        }
+
+        .card p.sub-title {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 8px;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #006064;
+        }
+
+        .btn-complete {
+            background-color: #e0e0e0;
+            color: #757575;
+            cursor: not-allowed;
+            font-size: 0.9rem;
+        }
+
+        /* テーブル (お知らせ) */
+        .notice-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .notice-table th, .notice-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid var(--border-color);
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        .notice-table th {
+            background-color: #f0f0f0;
+            width: 30%;
+        }
+
+        /* 動画エリアスタイル */
+        .video-section {
+            background: #fdfdfd;
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+            color: #006064;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .video-container {
+            display: none;
+            margin-top: 20px;
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 比率 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* フロアマップ */
+        .map-container {
+            text-align: center;
+        }
+
+        .map-image {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        /* 持ち物チェックリスト */
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .checklist-box {
+            background: #f9f9f9;
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .checklist-box p {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .checklist-box ul {
+            list-style: none;
+        }
+
+        .checklist-box li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .checklist-box li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* FAQ */
+        details {
+            background: #f9f9f9;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            margin-bottom: 10px;
+            padding: 12px 15px;
+        }
+
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details[open] summary {
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        details p {
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        /* 管理者リンク */
+        .admin-link-box {
+            background: #fff3e0;
+            border: 1px solid #ffe0b2;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .admin-link-box a {
+            color: #e65100;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* フッター */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>「阪神エリア」のほいコレ就職・転職フェアin三ノ宮 出展園専用ページ</h1>
+        </header>
+
+        <!-- イベント日時・会場情報 -->
+        <div class="event-info">
+            <div class="info-row">
+                <span class="info-label">開催日時</span>
+                <div class="info-value">7月11日（土） 13:30 ～ 16:30</div>
+            </div>
+            <div class="info-row">
+                <span class="info-label">出展園受付</span>
+                <div class="info-value">
+                    11:45 ～ 12:15
+                    <span class="note">※受付時間内の来場をお願いいたします</span>
+                </div>
+            </div>
+            <div class="info-row">
+                <span class="info-label">会場</span>
+                <div class="info-value">
+                    スペースアルファ三宮 (センタープラザ6F)
+                    <a href="https://maps.app.goo.gl/8L4ZTFB26w4CzzuB7" target="_blank" class="map-link">Google Map</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- お知らせ -->
+        <section>
+            <h2><span>📅</span> お知らせ</h2>
+            <table class="notice-table">
+                <thead>
+                    <tr>
+                        <th>確認項目</th>
+                        <th>更新日</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#video-area">限定動画を公開しました（フォーム入力後に視聴可能）</a></td>
+                        <td>2026年7月13日(月)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 動画視聴・入力フォームエリア（アンケート＆レポートからの差し替え） -->
+        <section id="video-area" class="video-section">
+            <h2><span>🎬</span> 限定解説動画視聴</h2>
+            <p style="font-size: 0.9rem; color: #555; margin-bottom: 15px;">
+                動画を視聴するには、以下のフォームに「法人名」と「園名」をご入力の上、送信ボタンを押してください。
+            </p>
+
+            <form id="videoAccessForm">
+                <div class="form-group">
+                    <label for="houjinName">法人名 <span style="color:red;">*</span></label>
+                    <input type="text" id="houjinName" placeholder="例：社会福祉法人 ほいコレ福祉会" required>
+                </div>
+                <div class="form-group">
+                    <label for="enName">園名 <span style="color:red;">*</span></label>
+                    <input type="text" id="enName" placeholder="例：ほいコレ保育園" required>
+                </div>
+                <button type="submit" id="submitBtn" class="btn">動画を視聴する</button>
+            </form>
+
+            <!-- 動画埋め込みプレイヤー（送信後表示） -->
+            <div id="videoContainer" class="video-container">
+                <iframe 
+                    id="youtubeIframe" 
+                    src="" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <!-- ブックレット資料 -->
+        <div class="grid-2">
+            <section class="card">
+                <h2 class="card-title">Booklet</h2>
+                <p class="sub-title">WEBデータ（出展園）</p>
+                <a href="https://hoikucollection.jp/navi/2027/event/detail/0711_enlist/" target="_blank" class="btn">一覧ページ（URL）</a>
+            </section>
+
+            <section class="card">
+                <h2 class="card-title">Booklet</h2>
+                <p class="sub-title">冊子データ（施設一覧）</p>
+                <a download href="./fair_booklet2.pdf" class="btn">ダウンロード（PDF）</a>
+            </section>
+        </div>
+
+        <!-- フロアマップ -->
+        <section>
+            <h2>Floor Map</h2>
+            <p class="sub-title" style="margin-bottom: 10px; text-align: center;">会場マップ</p>
+            <div class="map-container">
+                <a href="./map.pdf" target="_blank">
+                    <img src="./map.jpg" alt="会場マップ" class="map-image" onerror="this.src='https://via.placeholder.com/600x300?text=Floor+Map+Image'">
+                </a>
+                <a download href="./map.pdf" class="btn" style="max-width: 300px; margin: 10px auto 0;">会場マップ(画像)を保存する</a>
+            </div>
+        </section>
+
+        <!-- マニュアル & 発送フォーム -->
+        <div class="grid-2">
+            <section class="card">
+                <h2 class="card-title">Manual</h2>
+                <p class="sub-title">出展マニュアル</p>
+                <a download href="./manual.pdf" class="btn">ダウンロード（PDF）</a>
+            </section>
+
+            <section class="card">
+                <h2 class="card-title">Luggage</h2>
+                <p class="sub-title">事前荷物発送申請フォーム</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSciMTVgG4kX08duMrVp6K1syzPiNv_1H4DoMU9uq-5PK8JbVg/viewform" target="_blank" class="btn">申請フォーム</a>
+                <p style="font-size: 0.8rem; color: #d32f2f; margin-top: 10px; text-align: left;">【重要】お荷物を前日会場へ発送希望の方は申請をお願い致します。<br>入力締切：7/3（金）まで</p>
+            </section>
+        </div>
+
+        <!-- 受付状況 -->
+        <div class="grid-2">
+            <div class="card" style="text-align: left;">
+                <h3>📝 属性登録</h3>
+                <p style="font-size: 0.85rem; color: #555; margin: 8px 0;">出展園情報を登録してください。登録いただいた情報は当日来場者に渡す冊子に掲載予定です。すでにお送りいただいている出展者様は登録不要です。</p>
+                <div class="btn btn-complete">ご協力ありがとうございました</div>
+            </div>
+
+            <div class="card" style="text-align: left;">
+                <h3>📤 PR動画の提出</h3>
+                <p style="font-size: 0.85rem; color: #555; margin: 8px 0;">動画ファイル名を「法人名+園名」にしてください。すでにお送りいただいている出展者様は不要です。</p>
+                <div class="btn btn-complete">ご協力ありがとうございました</div>
+            </div>
+        </div>
+
+        <!-- 持ち物チェックリスト -->
+        <section>
+            <h2><span>✅</span> 当日の持ち物チェックリスト</h2>
+            <div class="checklist-grid">
+                <div class="checklist-box">
+                    <p>準備物</p>
+                    <ul>
+                        <li>出展園マニュアル（本ページよりDL）</li>
+                        <li>貴園のパンフレット（ブース配布・資料コーナー用）</li>
+                        <li>求人票</li>
+                        <li>筆記用具・メモ帳</li>
+                    </ul>
+                </div>
+                <div class="checklist-box">
+                    <p>あると便利なアイテム</p>
+                    <ul>
+                        <li>クリアファイル・封筒</li>
+                        <li>テーブルクロス・背もたれカバー</li>
+                        <li>園の様子がわかる写真・パネル</li>
+                        <li>PC・タブレット端末（動画再生用）</li>
+                        <li>養生テープ（掲示用）</li>
+                        <li>園見学用カレンダー（来場者説明用）</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section>
+            <h2><span>❓</span> よくある質問 (FAQ)</h2>
+            <div>
+                <details open>
+                    <summary>
+                        <span>Q. 荷物を事前に会場へ送ることはできますか？</span>
+                        <span>▼</span>
+                    </summary>
+                    <p>
+                        A. 可能です。以下の内容をご確認ください。<br>
+                        ※事前に送る際は「<a href="https://docs.google.com/forms/d/e/1FAIpQLSciMTVgG4kX08duMrVp6K1syzPiNv_1H4DoMU9uq-5PK8JbVg/viewform" target="_blank">申請フォーム</a>」より申請をお願いします。<br>
+                        <strong>日時指定：</strong>【7月10日（金）午後指定】<br>
+                        <strong>お届け先：</strong>〒650-0021 神戸市中央区三宮町1-9-1 センタープラザ6F スペースアルファ三宮(特大会議室)<br>
+                        <strong>品名：</strong>法人名(園名) 7/11ほいコレ就職フェアにて使用
+                    </p>
+                </details>
+                <details>
+                    <summary>
+                        <span>Q. ブースで電源（コンセント）は使用できますか？</span>
+                        <span>▼</span>
+                    </summary>
+                    <p>A. 1ブースにつきコンセントを1つ用意しています。延長コードは各自でご持参ください。</p>
+                </details>
+                <details>
+                    <summary>
+                        <span>Q. 昼食を食べるスペースはありますか？</span>
+                        <span>▼</span>
+                    </summary>
+                    <p>A. 開催前はブースにて各自お持ち込みいただいたお食事をとっていただけます。<br>また会場外での食事も可能ですが、直前説明の時間までにはブースにお戻りください。</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- 管理画面リンク -->
+        <div class="admin-link-box">
+            <p style="margin-bottom: 5px; font-size: 0.9rem;">ほいコレナビ2027の更新・編集はこちら</p>
+            <a href="https://hoikucollection.jp/navi/2027/management/login.php" target="_blank">ほいコレナビ 管理画面</a>
+        </div>
+
+        <!-- フッター -->
+        <footer>
+            <p>© 2026 ほいコレ就職フェア事務局</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // GASのWeb App URL
+        const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwI9w_gFpgXCvMewS592wyvI5IwJt-X9FqHC9ueT3cc-W8i3-H3ihKtqkTBM9Zrw6v-RQ/exec"; 
+        
+        // 対象のYouTube動画埋め込み用URL（正確なパラメータ形式）
+        const TARGET_YOUTUBE_URL = "https://www.youtube.com/embed/MQa9Fq8WkQY?si=nzVZLuaE89PBTh2z&autoplay=1";
+
+        document.getElementById('videoAccessForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const houjinName = document.getElementById('houjinName').value.trim();
+            const enName = document.getElementById('enName').value.trim();
+            const submitBtn = document.getElementById('submitBtn');
+
+            if (!houjinName || !enName) {
+                alert('法人名と園名を入力してください。');
+                return;
+            }
+
+            // ボタンを非活性化
+            submitBtn.disabled = true;
+            submitBtn.textContent = '送信中...';
+
+            // GASへデータ送信
+            fetch(GAS_WEB_APP_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    houjinName: houjinName,
+                    enName: enName
+                })
+            })
+            .then(() => {
+                // フォーム非表示
+                document.getElementById('videoAccessForm').style.display = 'none';
+                
+                // 動画プレイヤーにURLを挿入して表示
+                const iframe = document.getElementById('youtubeIframe');
+                iframe.src = TARGET_YOUTUBE_URL;
+                
+                const container = document.getElementById('videoContainer');
+                container.style.display = 'block';
+            })
+            .catch(error => {
+                console.error('送信エラー:', error);
+                alert('送信に失敗しました。時間をおいて再度お試しください。');
+                submitBtn.disabled = false;
+                submitBtn.textContent = '動画を視聴する';
+            });
+        });
+    </script>
+</body>
+</html>
